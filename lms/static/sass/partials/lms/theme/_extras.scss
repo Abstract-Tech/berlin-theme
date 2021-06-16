@@ -452,11 +452,15 @@ header.global-header {
     border-bottom: none;
     box-shadow: none;
     background: transparent;
-    padding: 0;
 }
 
 header.global-header .nav-links .secondary .dropdown-user-menu {
     right: auto;
+
+    @media screen and (max-width:1500px) {
+        right: 30px;
+        top: 75px;
+    }
 }
 
 select.action-preview-select option {
@@ -923,44 +927,6 @@ body.view-profile .wrapper-profile-section-container-one .wrapper-profile-sectio
     padding: 5px;
 }
 
-section.home .courses-container .courses .courses-listing .courses-listing-item {
-
-    &:nth-child(3),
-    &:nth-child(4),
-    &:nth-child(5) {
-        display: none;
-    }
-
-}
-
-section.home .courses-container .courses .courses-listing .courses-listing-item,
-section.find-courses .courses-container .courses.no-course-discovery .courses-listing .courses-listing-item {
-
-    &:nth-child(3),
-    &:nth-child(4),
-    &:nth-child(5) {
-        display: none;
-    }
-
-}
-
-li.courses-listing-item {
-
-    &:nth-child(3),
-    &:nth-child(4),
-    &:nth-child(5) {
-        display: none;
-    }
-}
-
-li.course-item {
-    display: none;
-
-    &:nth-child(1),
-    &:nth-child(4) {
-        display: block;
-    }
-}
 
 div.discussion-module-header button.btn,
 button.discussion-show.btn,
@@ -1720,4 +1686,35 @@ nav.nav-colophon li {
 #footer-openedx div.container {
     max-width: 1280px;
     margin: 0 auto;
+}
+
+footer#footer-openedx .row {
+    display: flex;
+
+    @media screen and (max-width:991px) {
+        flex-direction: column;
+    }
+
+    div.address {
+        padding-right: 15px;
+    }
+}
+
+nav.nav-colophon li {
+
+    @media screen and (max-width:991px) {
+        margin-top: 15px;
+        margin-left: 0;
+    }
+}
+
+div.wrapper-msg.wrapper-auto-cert .auto-cert-message {
+    border-left: 3px solid $primary;
+}
+
+div.wiki-wrapper section.wiki .nav-tabs li.active a {
+    color: $primary;
+    font-weight: bold;
+    background-color: #f2f2f2;
+    border-color: $primary;
 }
